@@ -1,0 +1,40 @@
+@import "vendor/normalize.less";
+@import "vendor/normalize-custom.less";
+@import "mixins.less";
+@import "colors.less";
+
+html, body {
+	font-family: 'Open Sans' sans-serif;
+	height: 100%;
+	* {
+		font-family: 'Open Sans' sans-serif;
+	}
+}
+
+a {
+	cursor: pointer;
+}
+
+// layout
+.app-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 40px;
+
+	
+	main {
+		.absoluted;
+	}
+}
+
+
+
+@import "views/appStatusBar.less";
+
+/*@import "components/basicInput.less";
+@import "components/loader.less";
+
+@import "components/users/view.less";
+*/

@@ -1,0 +1,41 @@
+{
+  "name": "ide-poc-1",
+  "version": "1.0.0",
+  "description": "Ide proof of concept",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --progress --colors --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "babel": "^6.5.2",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-polyfill": "^6.20.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "classnames": "^2.2.5",
+    "css-loader": "^0.26.1",
+    "history": "^4.5.1",
+    "less": "^2.7.2",
+    "less-loader": "^2.2.3",
+    "moment": "^2.17.1",
+    "quill": "^1.1.10",
+    "react": "^15.4.2",
+    "react-addons-update": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router": "^3.0.1",
+    "reflux": "^6.0.0",
+    "reflux-promise": "^1.0.4",
+    "style-loader": "^0.13.1",
+    "superagent": "^3.3.2",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "devDependencies": {
+    "react-hot-loader": "^1.3.1"
+  }
+}

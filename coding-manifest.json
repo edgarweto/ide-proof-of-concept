@@ -1,0 +1,9 @@
+{
+  "js": {
+    "names": [{
+      "app-objects": "global components, common across all ide instances, uses, etc.",
+      "name": "appNameOfObject.jsx",
+      "className": "app-name-of-object"
+    }]
+  }
+}
