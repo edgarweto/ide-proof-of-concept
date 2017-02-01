@@ -9,7 +9,7 @@ export default React.createClass({
 
   render: function () {
     return (
-      <li className="app-menu-item">{this.props.cmdCaption}</li>
+      <li className="app-menu-item" data-enabled={this.state.enabled}>{this.props.cmdCaption}</li>
     );
   }
 });
