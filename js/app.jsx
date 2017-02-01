@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 
 import AppStatusBar from 'appRoot/views/appStatusBar';
+import AppHeadBar from 'appRoot/views/appHeadBar';
 
 import CSS from '../css/app.less';
 
@@ -15,6 +16,10 @@ let AppLayout = React.createClass({
          
         </main>
         <AppStatusBar />
+        <AppHeadBar>
+          <li>File</li>
+          <li>Edit</li>
+        </AppHeadBar>
       </div>
     );
   }
