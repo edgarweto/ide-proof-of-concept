@@ -1,6 +1,5 @@
-.app-menu {
+.app-nav {
   .app-menu-item {
-    display: inline-block;
     padding: 2px;
     color: @app-stroke-light;
 
@@ -8,5 +7,25 @@
       color: @app-stroke;
       cursor: pointer;
     }
-  } 
+    .app-menu-caption {
+      
+    }
+  }
+
+  &.app-nav-h > .app-menu-item {
+    display: inline-block;
+  }
+
+  &.app-nav-v > .app-menu-item {
+    display: block;
+  }
 }
+/*
+.app-nav.app-nav-h > .app-menu-item {
+    display: inline-block;
+}
+
+.app-nav.app-nav-v > .app-menu-item {
+    display: block;
+}
+*/

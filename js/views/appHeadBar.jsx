@@ -12,12 +12,19 @@ export default React.createClass({
     return (
       <div className="app-head-bar">
         <a href="" title="">L</a>
-        <Menu menuType="app-head-bar-menu">
-          <MenuItem cmdCaption="File" />
+
+        <Menu menuType="app-nav-h app-head-bar-menu">
+          <MenuItem cmdCaption="File" menuType="app-nav-v">
+            <MenuItem cmdCaption="Open" />
+            <MenuItem cmdCaption="Save" />
+            <MenuItem type="divider" />
+            <MenuItem cmdCaption="Exit"/>
+          </MenuItem>
+
           <MenuItem cmdCaption="Edit" />
         </Menu>
         
-        <Menu menuType="app-head-bar-menu main-user-menu">
+        <Menu menuType="app-head-bar-menu main-user-menu app-nav-h">
           <MenuItem cmdCaption="Login" />
           <MenuItem cmdCaption="Register" />
         </Menu>

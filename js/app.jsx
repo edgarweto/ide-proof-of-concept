@@ -16,10 +16,7 @@ let AppLayout = React.createClass({
          
         </main>
         <AppStatusBar />
-        <AppHeadBar>
-          <li>File</li>
-          <li>Edit</li>
-        </AppHeadBar>
+        <AppHeadBar />
       </div>
     );
   }
