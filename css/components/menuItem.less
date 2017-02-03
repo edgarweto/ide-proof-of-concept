@@ -1,5 +1,6 @@
 .app-nav {
   .app-menu-item {
+    position: relative;
     padding: 2px;
     color: @app-stroke-light;
 
@@ -19,13 +20,13 @@
   &.app-nav-v > .app-menu-item {
     display: block;
   }
-}
-/*
-.app-nav.app-nav-h > .app-menu-item {
-    display: inline-block;
-}
 
-.app-nav.app-nav-v > .app-menu-item {
-    display: block;
+  .app-menu-item .app-menu-group {
+    padding: 2px;
+    border: 1px solid @app-stroke-light;
+    background-color: @app-bkg-light;
+
+    position: absolute;
+    display: none;
+  }
 }
-*/

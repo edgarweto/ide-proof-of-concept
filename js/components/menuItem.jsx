@@ -14,7 +14,7 @@ export default React.createClass({
           this.props.children && this.props.children.length > 0 ? 
             <div className="app-menu-item-content">
               <div className="app-menu-item-caption">{this.props.cmdCaption}</div>
-              <ul className={this.props.menuType}>{this.props.children}</ul>
+              <ul className={'app-menu-group ' + this.props.menuType}>{this.props.children}</ul>
             </div>
           : 
           this.props.cmdCaption

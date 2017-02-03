@@ -10,10 +10,10 @@ export default React.createClass({
   render: function () {
     return (
       <div className="app-status-bar">
-        <ul className="app-status-bar-current">
+        <ul className="app-status-bar-current to-left">
           <li>{this.state.busy ? 'Busy' : 'Ready'}</li>
         </ul>
-        <ul className="app-status-bar-global"></ul>
+        <ul className="app-status-bar-global to-right"></ul>
       </div>
     );
   }
