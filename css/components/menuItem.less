@@ -8,8 +8,12 @@
       color: @app-stroke;
       cursor: pointer;
     }
-    .app-menu-caption {
-      
+    .app-menu-caption {  
+    }
+    &.item-divider {
+      border-top: 1px solid @app-stroke-light;
+      margin-top: 4px;
+      height: 1px;
     }
   }
 
@@ -28,5 +32,9 @@
 
     position: absolute;
     display: none;
+
+    &[data-isOpen="1"] {
+      display: block;
+    }
   }
 }

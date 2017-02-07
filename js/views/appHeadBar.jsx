@@ -11,17 +11,20 @@ export default React.createClass({
   render: function () {
     return (
       <div className="app-head-bar">
-        <a href="" title="">L</a>
+        <a href="" title="">LL</a>
 
         <Menu menuType="app-nav-h app-head-bar-menu">
           <MenuItem cmdCaption="File" menuType="app-nav-v">
             <MenuItem cmdCaption="Open" />
             <MenuItem cmdCaption="Save" />
-            <MenuItem type="divider" />
+            <MenuItem isDivider={true} />
             <MenuItem cmdCaption="Exit"/>
           </MenuItem>
 
-          <MenuItem cmdCaption="Edit" />
+          <MenuItem cmdCaption="Edit" menuType="app-nav-v">
+            <MenuItem cmdCaption="Undo" />
+            <MenuItem cmdCaption="Redo" />
+          </MenuItem>
         </Menu>
         
         <Menu menuType="app-head-bar-menu main-user-menu app-nav-h">
