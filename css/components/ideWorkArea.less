@@ -1,0 +1,34 @@
+.ide-workarea-container {
+  .ide-workarea {
+    .absoluted;
+
+    border: 1px solid @app-stroke;
+    background-color: @app-bkg-light;
+
+    &.is-divider {
+      padding: 0;
+    }
+  }
+
+  /* Horizontal workarea container */
+  &[data-orientation=0] {
+    .ide-workarea {
+      &.is-divider {
+        width: 2px;
+        height: 100%;
+        cursor: col-resize;
+      }
+    }
+  }
+
+  /* Vertical workarea container */
+  &[data-orientation=1] {
+    .ide-workarea {
+      &.is-divider {
+        width: 100%;
+        height: 2px;
+        cursor: row-resize;
+      }
+    }
+  }
+}
