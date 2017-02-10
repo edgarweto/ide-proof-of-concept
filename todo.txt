@@ -1,2 +1,5 @@
 * UI
 - menu, menuItem
+- workspace
+- slice views
+- panes (container, tabs, pane)

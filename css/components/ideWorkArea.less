@@ -2,31 +2,35 @@
   .ide-workarea {
     .absoluted;
 
-    border: 1px solid @app-stroke;
+    padding: 0;
     background-color: @app-bkg-light;
 
     &.is-divider {
-      padding: 0;
+      background-color: @app-stroke-light;
     }
   }
 
   /* Horizontal workarea container */
-  &[data-orientation=0] {
+  &[data-orientation='0'] {
     .ide-workarea {
-      &.is-divider {
-        width: 2px;
+      &.is-divider {/*vertical bar*/
+        width: 4px;
         height: 100%;
+        left: initial;
+        right: initial;
         cursor: col-resize;
       }
     }
   }
 
   /* Vertical workarea container */
-  &[data-orientation=1] {
+  &[data-orientation='1'] {
     .ide-workarea {
       &.is-divider {
         width: 100%;
-        height: 2px;
+        height: 4px;
+        top: initial;
+        bottom: initial;
         cursor: row-resize;
       }
     }

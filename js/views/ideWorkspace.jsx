@@ -13,9 +13,9 @@ export default React.createClass({
     return (
       <main className="ide-workspace">
         <IdeWorkAreaContainer orientation="horizontal">
-          <IdeWorkArea name="main-bar" />
-          <IdeWorkArea isDivider={true} />
-          <IdeWorkArea name="secondary-bar" />
+          <IdeWorkArea name="main-bar" pos={{}} />
+          <IdeWorkArea isDivider={true} pos={{}} />
+          <IdeWorkArea name="secondary-bar" pos={{}} />
         </IdeWorkAreaContainer>
       </main>
     );
