@@ -3,3 +3,11 @@
 - workspace
 - slice views
 - panes (container, tabs, pane)
+
+
+NEXT REVISION/VERSION
+- make independent components
+- slice views
+- panes
+- menus
+- strong css and js 'nomenclature'

@@ -38,9 +38,9 @@ export default React.createClass({
 
       // How many children areas/dividers are there
       let nChilds = this.props.children ? this.props.children.length : 0,
-        nWorkAreas = (nChilds + 1) / 2,
-        nDividers = nWorkAreas - 1,
-        pxDividerSize = 4;
+        nWorkAreas = (nChilds + 1) / 2,//TODO check as an assert
+        nDividers = nWorkAreas - 1,//TODO check as an assert
+        pxDividerSize = 4;//TODO: read from CSS
 
       // Calculate sizes in pct
       let pxTotalSize = orientation.isHorizontal ? this.state.pxWidth : this.state.pxHeight,
@@ -51,6 +51,7 @@ export default React.createClass({
       // Finally modify children position
       var children = React.Children.map(this.props.children, function (child, i) {
         let pos = child.props.pos;
+        pos.isHorizontal = orientation.isHorizontal;
 
         if (child.props.isDivider) {
           if (orientation.isHorizontal) {
