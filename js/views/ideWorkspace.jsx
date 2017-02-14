@@ -15,16 +15,20 @@ export default React.createClass({
       <main className="ide-workspace">
         <IdeWorkAreaContainer orientation="horizontal">
           <IdeWorkArea name="main-bar" pos={{}} />
-          <IdeWorkAreaDivider pos={{}} />
+          <IdeWorkAreaDivider pos={{}} onMoved={this._onDividerMoved} />
           <IdeWorkArea name="secondary-bar" pos={{}}>
             <IdeWorkAreaContainer orientation="vertical">
               <IdeWorkArea name="top-area" pos={{}} />
-              <IdeWorkAreaDivider pos={{}} />
+              <IdeWorkAreaDivider pos={{}} onMoved={this._onDividerMoved} />
               <IdeWorkArea name="bottom-area" pos={{}} />
             </IdeWorkAreaContainer>
           </IdeWorkArea>
         </IdeWorkAreaContainer>
       </main>
     );
+  },
+
+  _onDividerMoved: function (x) {
+    console.log("[IdeWorkspace::_onDividerMoved]", x);
   }
 });
