@@ -15,7 +15,6 @@ class IdeWorkAreaDivider extends IdeWorkArea {
   }
 
   componentDidUpdate(props, state) {
-console.log("componentDidUpdate", state, this.state);
 
     if (this.state.isDragging && !state.isDragging) {
 console.log("START DnD");
@@ -38,8 +37,8 @@ console.log("MouseDown", box);
 
     this.setState({
       isDragging: true,
-      sttLeft: box.left,
-      sttTop: box.top
+      sttLeft: e.pageX - box.left,
+      sttTop: e.pageY - box.top
     });
     e.stopPropagation();
     e.preventDefault();
@@ -48,7 +47,8 @@ console.log("MouseDown", box);
   _onMouseMove(e) {
     if (this.state.isDragging) {
       this.props.onMoved({
-
+        dx: e.pageX - this.state.sttLeft,
+        dy: e.pageY - this.state.sttTop
       });
     }
   }
