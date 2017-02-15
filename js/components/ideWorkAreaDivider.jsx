@@ -15,13 +15,10 @@ class IdeWorkAreaDivider extends IdeWorkArea {
   }
 
   componentDidUpdate(props, state) {
-
     if (this.state.isDragging && !state.isDragging) {
-console.log("START DnD");
       document.addEventListener('mousemove', this._onMouseMove.bind(this));
       document.addEventListener('mouseup', this._onMouseUp.bind(this));
     } else if (!this.state.isDragging && state.isDragging) {
-console.log("STOP DnD");
       document.removeEventListener('mousemove', this._onMouseMove.bind(this));
       document.removeEventListener('mouseup', this._onMouseUp.bind(this));
     }
@@ -33,12 +30,11 @@ console.log("STOP DnD");
       return;
     }
     let box = this.refs.draggable.getBoundingClientRect();
-console.log("MouseDown", box);
 
     this.setState({
       isDragging: true,
-      sttLeft: e.pageX - box.left,
-      sttTop: e.pageY - box.top
+      sttLeft: e.pageX,
+      sttTop: e.pageY
     });
     e.stopPropagation();
     e.preventDefault();
@@ -46,9 +42,9 @@ console.log("MouseDown", box);
 
   _onMouseMove(e) {
     if (this.state.isDragging) {
-      this.props.onMoved({
-        dx: e.pageX - this.state.sttLeft,
-        dy: e.pageY - this.state.sttTop
+      this.props.fn.onMoved({
+        x: this.props.pos.isHorizontal ? e.pageX - this.state.sttLeft : 0,
+        y: this.props.pos.isHorizontal ? 0 : e.pageY - this.state.sttTop
       });
     }
   }
@@ -75,7 +71,7 @@ console.log("MouseDown", box);
     }
 
     return (
-      <div className="ide-workarea is-divider" ref="draggable" style={pos} onClick={this._onMouseDown.bind(this)}>
+      <div className="ide-workarea is-divider" ref="draggable" style={pos} onMouseDown={this._onMouseDown.bind(this)}>
         {this.props.children}
       </div>
     );
@@ -84,7 +80,10 @@ console.log("MouseDown", box);
 
 IdeWorkAreaDivider.propTypes = {}
 IdeWorkAreaDivider.defaultProps = {
-  isDivider: true
+  isDivider: true,
+  fn: {
+    onMoved: null
+  }
 }
 
 export default IdeWorkAreaDivider;

@@ -54,6 +54,8 @@ export default React.createClass({
         pos.isHorizontal = orientation.isHorizontal;
 
         if (child.props.isDivider) {
+          child.props.fn.onMoved = this._onDividerMoved;
+
           if (orientation.isHorizontal) {
             pos.pctLeft = pctCurPos;
             pos.pctWidth = pctSizeDivider;
@@ -78,6 +80,55 @@ export default React.createClass({
       return children;
     }
     return [];
+  },
+
+  _onDividerMoved: function (delta) {
+    //console.log("[IdeWorkAreaContainer::_onDividerMoved]", x);
+    this._onResizeChildren(delta);
+  },
+
+  //
+  // First version: two work areas and one divider in the middle
+  _onResizeChildren: function (delta) {
+    if (this.state.pxWidth && this.state.pxHeight) {
+      //console.log("CHILDREN:", this.props.children);
+
+      //assert(this.props.children && this.props.children.length > 2);//At least 3 children
+      //assert(this.props.children[1].isDivider);//odd indexed children are dividers
+
+      let splitter = this.props.children[1];
+
+      //Horizontal displacement
+      if (delta.x) {
+        let curSplitX = (splitter.props.pos.pctLeft / 100) * this.state.pxWidth,
+          newSplitX = curSplitX + delta.x,
+          pxSplitWidth = 4;//TODO: PARAMETER OR FROM CSS
+
+        //Limits
+        if (newSplitX < 0) {
+          newSplitX = 0;
+        } else if (newSplitX > this.state.pxWidth - pxSplitWidth) {
+          newSplitX = this.state.pxWidth - pxSplitWidth;
+        }
+
+        //Propagate variation to the two neighbour areas
+        let curSplitterPctX = splitter.props.pos.pctLeft,
+         newSplitPctX = (newSplitX * 100) / this.state.pxWidth,
+         pctVariation = newSplitPctX - curSplitterPctX;
+
+        console.log("% variation:", pctVariation);
+
+        this.props.children[0].props.pos.pctWidth += pctVariation;
+        this.props.children[2].props.pos.pctpctLeft += pctVariation;
+        this.props.children[2].props.pos.pctWidth -= pctVariation;
+      }
+
+      //Vertical displacement
+      if (delta.y) {
+
+      }
+
+    }
   },
 
   render: function () {
