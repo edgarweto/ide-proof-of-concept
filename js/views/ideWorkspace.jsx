@@ -15,11 +15,11 @@ export default React.createClass({
       <main className="ide-workspace">
         <IdeWorkAreaContainer orientation="horizontal">
           <IdeWorkArea name="main-bar" pos={{}} />
-          <IdeWorkAreaDivider pos={{}} />
+          <IdeWorkAreaDivider name="divider-1" pos={{}} />
           <IdeWorkArea name="secondary-bar" pos={{}}>
             <IdeWorkAreaContainer orientation="vertical">
               <IdeWorkArea name="top-area" pos={{}} />
-              <IdeWorkAreaDivider pos={{}} />
+              <IdeWorkAreaDivider name="divider-2" pos={{}} />
               <IdeWorkArea name="bottom-area" pos={{}} />
             </IdeWorkAreaContainer>
           </IdeWorkArea>

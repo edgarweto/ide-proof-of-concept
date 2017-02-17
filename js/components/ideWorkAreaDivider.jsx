@@ -4,6 +4,8 @@ import IdeWorkArea from 'appRoot/components/ideWorkArea';
 class IdeWorkAreaDivider extends IdeWorkArea {
   constructor(props) {
     super(props);
+
+    this._onMouseDown = this._onMouseDown.bind(this);
   }
 
   getInitialState() {
@@ -42,7 +44,8 @@ class IdeWorkAreaDivider extends IdeWorkArea {
 
   _onMouseMove(e) {
     if (this.state.isDragging) {
-      this.props.fn.onMoved({
+      //this.props.fn.onMoved({
+      this.fn.onMoved({
         x: this.props.pos.isHorizontal ? e.pageX - this.state.sttLeft : 0,
         y: this.props.pos.isHorizontal ? 0 : e.pageY - this.state.sttTop
       });
@@ -71,7 +74,7 @@ class IdeWorkAreaDivider extends IdeWorkArea {
     }
 
     return (
-      <div className="ide-workarea is-divider" ref="draggable" style={pos} onMouseDown={this._onMouseDown.bind(this)}>
+      <div className="ide-workarea is-divider" ref="draggable" style={pos} onMouseDown={this._onMouseDown}>
         {this.props.children}
       </div>
     );
@@ -81,6 +84,7 @@ class IdeWorkAreaDivider extends IdeWorkArea {
 IdeWorkAreaDivider.propTypes = {}
 IdeWorkAreaDivider.defaultProps = {
   isDivider: true,
+  parent: null,
   fn: {
     onMoved: null
   }
