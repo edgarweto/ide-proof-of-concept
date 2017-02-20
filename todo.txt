@@ -1,13 +1,16 @@
 * UI
 - menu, menuItem
 - workspace
-- slice views
+- slice views + resize
 - panes (container, tabs, pane)
+- json explorer
 
 
 NEXT REVISION/VERSION
 - make independent components
+- all ES6 (+ES7?)
 - slice views
 - panes
 - menus
 - strong css and js 'nomenclature'
+- svg's, i18n

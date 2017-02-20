@@ -62,14 +62,11 @@ class IdeWorkAreaContainer extends React.Component {
         pos.isHorizontal = orientation.isHorizontal;
 
         if (child.props.isDivider) {
-          debugger;
+          //debugger;
           console.log("RESIZE still from orientation:", this.props.orientation);
           child.props.fn.onMoved = this._onDividerMoved.bind(this);
           child.props.fn.parent = this;//Funcionará?????
 
-          child.fn = {
-            onMoved: this._onDividerMoved.bind(this)
-          };
 
 
 window.debug_childs = window.debug_childs || {};
