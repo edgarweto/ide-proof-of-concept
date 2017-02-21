@@ -3,6 +3,7 @@ import IdeWorkAreaContainer from 'appRoot/components/ideWorkAreaContainer';
 import IdeWorkArea from 'appRoot/components/ideWorkArea';
 import IdeWorkAreaDivider from 'appRoot/components/ideWorkAreaDivider';
 import IdePaneContainer from 'appRoot/components/tabPane/idePaneContainer';
+import JsonExplorer from 'appRoot/components/jsonExplorer/jsonExplorer';
 
 export default React.createClass({
   getInitialStatus: function () {
@@ -16,7 +17,9 @@ export default React.createClass({
       <main className="ide-workspace">
         <IdeWorkAreaContainer orientation="horizontal">
           <IdeWorkArea name="main-bar" pos={{}}>
-            <IdePaneContainer name="main-tabs" />
+            <IdePaneContainer name="main-tabs">
+              <JsonExplorer name="project-explorer"/>
+            </IdePaneContainer>
           </IdeWorkArea>
           <IdeWorkAreaDivider name="divider-1" pos={{}} />
           <IdeWorkArea name="secondary-bar" pos={{}}>
