@@ -1,18 +1,39 @@
 .json-explorer {
   .absoluted;
   padding: 12px;
+  overflow: scroll;
   color: @app-stroke;
   background-color: @app-background;
 
   .json-node {
 
+    .json-node-header {
+      padding-left: 4px;
+      .json-node-label-detail {
+        padding-left: 4px;
+        color: @app-stroke-light;
+      }
+    }
+    .json-node-body {
+      padding-left: 4px;
+      margin-left: 4px;
+    }
+
     .json-value {
+      padding-top: 1px;
+      padding-left: 4px;
+      border-left: 1px dashed @app-bkg-light;
+
       width: 100%;
       .label {
       }
       .value {
         padding-left: 4px;
         font-weight: bold;
+      }
+
+      &[data-type="boolean"] .value {
+        font-style: italic;
       }
     }
   }

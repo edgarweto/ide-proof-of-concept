@@ -13,12 +13,31 @@ export default React.createClass({
   },
 
   render: function () {
+
+    let data = {
+      myBool: true,
+      myInt: 89,
+      myFloat: 0.2378,
+      myString: "eoeo",
+      myObj: {a: 1, b: 2, c: 3},
+      myArr: [0, 1, 2, 3],
+      nested: {
+        myBool2: true,
+        myInt2: 89,
+        myString2: "eoeo",
+        myObj2: {a: 1, b: {x: 0, y: 1}, c: 3},
+      }
+
+     // more: this
+    }
+
+
     return (
       <main className="ide-workspace">
         <IdeWorkAreaContainer orientation="horizontal">
           <IdeWorkArea name="main-bar" pos={{}}>
             <IdePaneContainer name="main-tabs">
-              <JsonExplorer name="project-explorer"/>
+              <JsonExplorer name="project-explorer" data={data} />
             </IdePaneContainer>
           </IdeWorkArea>
           <IdeWorkAreaDivider name="divider-1" pos={{}} />

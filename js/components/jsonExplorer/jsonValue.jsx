@@ -21,12 +21,12 @@ class JsonValue extends React.Component {
       case 'number':
         break;
       case 'string':
-        value = "'" + value + "'";
+        value = "\"" + value + "\"";
         break;
     }
 
     return (
-      <div className="json-value">
+      <div className="json-value" data-type={valueType}>
         <span className="label">{this.props.label}:</span>
         <span className="value">{value}</span>
       </div>
