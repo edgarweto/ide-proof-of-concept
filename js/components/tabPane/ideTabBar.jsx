@@ -10,6 +10,7 @@ class IdeTabBar extends React.Component {
   render () {
     return (
       <div className="ide-tab-bar">
+        {this.props.children}
       </div>
     );
   }

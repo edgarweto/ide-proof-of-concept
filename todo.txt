@@ -2,15 +2,18 @@
 - menu, menuItem
 - workspace
 - slice views + resize
-- panes (container, tabs, pane)
++ panes (container, tabs, pane)
+ - we need a pane container for each contained view in order to control their visibility
+  without requiring these views to implement a special API.
 - json explorer
 
 
 NEXT REVISION/VERSION
-- make independent components
+- make independent components, but all linked to the project IDE (IdeTabBar, IdeWorkspace, ...)
 - all ES6 (+ES7?)
+- workspaces (extend to session concepts)
 - slice views
-- panes
+- panes + tab panes
 - menus
 - strong css and js 'nomenclature'
 - svg's, i18n

@@ -12,8 +12,6 @@ class JsonValue extends React.Component {
     let valueType = typeof this.props.value,
       value = this.props.value;
 
-    console.log(valueType);
-
     switch (valueType) {
       case 'boolean':
         value = value ? 'true' : 'false';

@@ -12,7 +12,7 @@ class JsonExplorer extends React.Component {
 
   render() {
     return (
-      <div className="json-explorer">
+      <div className="json-explorer" data-active={this.props.active ? '1' : '0'}>
         <JsonNode key='root' label='root' object={this.props.data} />
       </div>
     );
@@ -20,7 +20,8 @@ class JsonExplorer extends React.Component {
 }
 
 JsonExplorer.defaultProps = {
-  data: {}
+  data: {},
+  active: true
 };
 
 export default JsonExplorer;

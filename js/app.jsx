@@ -11,10 +11,8 @@ import CSS from '../css/app.less';
 
 let AppLayout = React.createClass({
   componentDidMount: function () {
-    console.log('componentDidMount', (new Date()).getTime());
   },
   componentDidUpdate: function () {
-    console.log('componentDidUpdate', (new Date()).getTime());
   },
   render: function () {
     return (

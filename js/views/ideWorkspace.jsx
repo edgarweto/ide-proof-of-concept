@@ -29,7 +29,12 @@ export default React.createClass({
       }
 
      // more: this
-    }
+    };
+
+    let samples = {
+      a: [0,2345,22,6,4,3,4,3,32,2],
+      b: [3,3,4,4,5,6,6,7,8,5,54,3,54,6,7,4]
+    };
 
 
     return (
@@ -37,7 +42,8 @@ export default React.createClass({
         <IdeWorkAreaContainer orientation="horizontal">
           <IdeWorkArea name="main-bar" pos={{}}>
             <IdePaneContainer name="main-tabs">
-              <JsonExplorer name="project-explorer" data={data} />
+              <JsonExplorer name="Explorer" data={data} />
+              <JsonExplorer name="Samples" data={samples} />
             </IdePaneContainer>
           </IdeWorkArea>
           <IdeWorkAreaDivider name="divider-1" pos={{}} />
