@@ -1,6 +1,7 @@
 .json-explorer {
   .absoluted;
   padding: 12px;
+  margin: 0;
   overflow: scroll;
   color: @app-stroke;
   background-color: @app-background;
@@ -10,8 +11,8 @@
   }
 
   .json-node {
-
     .json-node-header {
+      cursor: pointer;
       padding-left: 4px;
       .json-node-label-detail {
         padding-left: 4px;
@@ -21,6 +22,11 @@
     .json-node-body {
       padding-left: 4px;
       margin-left: 4px;
+    }
+    &[data-expanded='0'] {
+      .json-node-body {
+        display: none;
+      }
     }
 
     .json-value {

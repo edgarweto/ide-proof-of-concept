@@ -12,9 +12,9 @@ class JsonExplorer extends React.Component {
 
   render() {
     return (
-      <div className="json-explorer" data-active={this.props.active ? '1' : '0'}>
+      <ul className="json-explorer" data-active={this.props.active ? '1' : '0'}>
         <JsonNode key='root' label='root' object={this.props.data} />
-      </div>
+      </ul>
     );
   }
 }

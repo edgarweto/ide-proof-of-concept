@@ -5,7 +5,9 @@ class JsonNode extends React.Component {
 
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      expanded: false
+    };
   }
 
   render() {
@@ -25,18 +27,24 @@ class JsonNode extends React.Component {
     });
 
     return (
-      <div className="json-node">
-        <div className="json-node-header" data-type={typeof this.props.object} >
+      <li className="json-node" data-expanded={this.state.expanded ? '1' : '0'}>
+        <div className="json-node-header" data-type={typeof this.props.object} onClick={this._handleClick.bind(this)}>
           <span className="json-node-label">{this.props.label}:</span>
           <span className="json-node-label-detail">
             {isArray ? 'Array [' + this.props.object.length + ']' : 'Object'}
           </span>
         </div>
-        <div className="json-node-body">
+        <ul className="json-node-body">
           {nodes}
-        </div>
-      </div>
+        </ul>
+      </li>
     );
+  }
+
+  _handleClick(ev) {
+    this.setState({
+      expanded: !this.state.expanded
+    });
   }
 }
 

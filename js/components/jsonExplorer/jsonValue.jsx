@@ -24,10 +24,10 @@ class JsonValue extends React.Component {
     }
 
     return (
-      <div className="json-value" data-type={valueType}>
+      <li className="json-value" data-type={valueType}>
         <span className="label">{this.props.label}:</span>
         <span className="value">{value}</span>
-      </div>
+      </li>
     );
   }
 }

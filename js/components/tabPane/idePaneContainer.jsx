@@ -13,14 +13,10 @@ class IdePaneContainer extends React.Component {
     };
   }
 
-  _onTabItemClicked(ev) {
-    console.log("Tab clicked:", ev);
-  }
-
   render () {
     // For each child view, create a tab menu
     let tabMenu = React.Children.map(this.props.children, (child, idx) => {
-      return <IdeTabItem name={child.props.name} dirty={false} selected={0 === idx} onTabClicked={this._onTabItemClicked} />
+      return <IdeTabItem name={child.props.name} index={idx} dirty={false} selected={this.state.curSelected === idx} onTabClicked={this._onTabItemClicked.bind(this)} />
     });
 
     return (
@@ -40,6 +36,12 @@ class IdePaneContainer extends React.Component {
       return React.cloneElement(child, {
         active: idx === this.state.curSelected
       });
+    });
+  }
+
+  _onTabItemClicked(index) {
+    this.setState({
+      curSelected: index
     });
   }
 }
