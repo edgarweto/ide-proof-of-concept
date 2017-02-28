@@ -61,8 +61,8 @@ class IdeWorkAreaContainer extends React.Component {
         let pos = child.props.pos;
         pos.isHorizontal = orientation.isHorizontal;
 
-        if (child.props.isDivider) {
-          //debugger;
+        if (child.props.isSplitter) {
+          debugger;
           console.log("RESIZE still from orientation:", this.props.orientation);
           child.props.fn.onMoved = this._onDividerMoved.bind(this);
           child.props.fn.parent = this;//Funcionará?????
@@ -111,7 +111,7 @@ window.debug_childs[child.props.name] = child;
       console.log("CHILDREN:", this.props.children);
 
       assert(() => {return this.props.children && this.props.children.length > 2;}, 'At least 3 children');
-      assert(() => {return this.props.children[1].props.isDivider;}, 'odd indexed children are dividers');
+      assert(() => {return this.props.children[1].props.isSplitter;}, 'odd indexed children are dividers');
 
       let splitter = this.props.children[1];
 

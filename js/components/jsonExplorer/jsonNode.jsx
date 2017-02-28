@@ -29,7 +29,7 @@ class JsonNode extends React.Component {
     return (
       <li className="json-node" data-expanded={this.state.expanded ? '1' : '0'}>
         <div className="json-node-header" data-type={typeof this.props.object} onClick={this._handleClick.bind(this)}>
-          <span className="json-node-label">{this.props.label}:</span>
+          <span className="json-node-label" data-expanded={this.state.expanded ? '1' : '0'}>{this.props.label}:</span>
           <span className="json-node-label-detail">
             {isArray ? 'Array [' + this.props.object.length + ']' : 'Object'}
           </span>

@@ -1,11 +1,25 @@
-* UI
-- menu, menuItem
-- workspace
-- slice views + resize
-+ panes (container, tabs, pane)
- - we need a pane container for each contained view in order to control their visibility
-  without requiring these views to implement a special API.
-- json explorer
++ UI
+  - menu, menuItem
+  - Workspace
+    - slice views + resize
+    + panes (container, tabs, pane)
+     - we need a pane container for each contained view in order to control their visibility
+      without requiring these views to implement a special API.
+  + Special views
+    - json explorer
+    - text editor
+    - code editor
+    - command interpreter (linked to command lib)
+    - bash terminal
+
++ COMMANDS
+  - command core lib
+
++ LOGIN
+
++ EXAMPLES
+  - Git own projects explorer: able to create and edit projects and readme's
+  - Simple image editor
 
 
 NEXT REVISION/VERSION

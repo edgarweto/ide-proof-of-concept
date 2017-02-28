@@ -23,10 +23,17 @@
       padding-left: 4px;
       margin-left: 4px;
     }
+    
     &[data-expanded='0'] {
       .json-node-body {
         display: none;
       }
+    }
+    .json-node-label[data-expanded='0']:before {
+      content: '+';
+    }
+    .json-node-label[data-expanded='1']:before {
+      content: '-';
     }
 
     .json-value {

@@ -1,8 +1,7 @@
 import React from 'react';
 
-export default React.createClass({
-
-  render: function () {
+class IdeWorkArea extends React.Component {
+  render() {
     let pos = {};
     if (this.props.pos.isHorizontal) {
       pos = {
@@ -20,6 +19,8 @@ export default React.createClass({
       <div className={'ide-workarea'} style={pos}>
         {this.props.children}
       </div>
-    );
+    );    
   }
-});
+}
+
+export default IdeWorkArea;

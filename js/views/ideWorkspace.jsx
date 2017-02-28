@@ -1,7 +1,7 @@
 import React from 'react';
 import IdeWorkAreaContainer from 'appRoot/components/ideWorkAreaContainer';
 import IdeWorkArea from 'appRoot/components/ideWorkArea';
-import IdeWorkAreaDivider from 'appRoot/components/ideWorkAreaDivider';
+import IdeWorkAreaSplitter from 'appRoot/components/ideWorkAreaSplitter';
 import IdePaneContainer from 'appRoot/components/tabPane/idePaneContainer';
 import JsonExplorer from 'appRoot/components/jsonExplorer/jsonExplorer';
 
@@ -46,11 +46,11 @@ export default React.createClass({
               <JsonExplorer name="Samples" data={samples} />
             </IdePaneContainer>
           </IdeWorkArea>
-          <IdeWorkAreaDivider name="divider-1" pos={{}} />
+          <IdeWorkAreaSplitter name="divider-1" pos={{}} />
           <IdeWorkArea name="secondary-bar" pos={{}}>
             <IdeWorkAreaContainer orientation="vertical">
               <IdeWorkArea name="top-area" pos={{}} />
-              <IdeWorkAreaDivider name="divider-2" pos={{}} />
+              <IdeWorkAreaSplitter name="divider-2" pos={{}} />
               <IdeWorkArea name="bottom-area" pos={{}} />
             </IdeWorkAreaContainer>
           </IdeWorkArea>

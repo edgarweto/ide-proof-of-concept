@@ -5,7 +5,7 @@
     padding: 0;
     background-color: @app-bkg-light;
 
-    &.is-divider {
+    &.is-splitter {
       background-color: @app-stroke-light;
     }
   }
@@ -13,7 +13,7 @@
   /* Horizontal workarea container */
   &[data-orientation='0'] {
     .ide-workarea {
-      &.is-divider {/*vertical bar*/
+      &.is-splitter {/*vertical bar*/
         width: 4px;
         height: 100%;
         left: initial;
@@ -26,7 +26,7 @@
   /* Vertical workarea container */
   &[data-orientation='1'] {
     .ide-workarea {
-      &.is-divider {
+      &.is-splitter {
         width: 100%;
         height: 4px;
         top: initial;
