@@ -4,6 +4,7 @@ import IdeWorkArea from 'appRoot/components/ideWorkArea';
 import IdeWorkAreaSplitter from 'appRoot/components/ideWorkAreaSplitter';
 import IdePaneContainer from 'appRoot/components/tabPane/idePaneContainer';
 import JsonExplorer from 'appRoot/components/jsonExplorer/jsonExplorer';
+import TextEditor from 'appRoot/components/textEditor/textEditor';
 
 export default React.createClass({
   getInitialStatus: function () {
@@ -49,7 +50,11 @@ export default React.createClass({
           <IdeWorkAreaSplitter name="divider-1" pos={{}} />
           <IdeWorkArea name="secondary-bar" pos={{}}>
             <IdeWorkAreaContainer orientation="vertical">
-              <IdeWorkArea name="top-area" pos={{}} />
+              <IdeWorkArea name="top-area" pos={{}}>
+                <IdePaneContainer name="main-views">
+                  <TextEditor name="unnamed" />
+                </IdePaneContainer>
+              </IdeWorkArea>
               <IdeWorkAreaSplitter name="divider-2" pos={{}} />
               <IdeWorkArea name="bottom-area" pos={{}} />
             </IdeWorkAreaContainer>

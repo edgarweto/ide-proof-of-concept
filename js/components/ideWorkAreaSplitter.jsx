@@ -42,8 +42,7 @@ class IdeWorkAreaSplitter extends IdeWorkArea {
 
   _onMouseMove(e) {
     if (this.state.isDragging) {
-      debugger;
-      this.fn.onMoved({
+      this.props.fn.onMoved({
         x: this.props.pos.isHorizontal ? e.pageX - this.state.sttLeft : 0,
         y: this.props.pos.isHorizontal ? 0 : e.pageY - this.state.sttTop
       });

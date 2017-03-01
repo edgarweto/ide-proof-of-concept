@@ -11,6 +11,11 @@
     - code editor
     - command interpreter (linked to command lib)
     - bash terminal
+    + view manager: the app needs to know which is the selected or focused view, if a view is visible, etc.
+  + i18n
+  + SVG icons
+  + jslint
+
 
 + COMMANDS
   - command core lib
@@ -20,6 +25,7 @@
 + EXAMPLES
   - Git own projects explorer: able to create and edit projects and readme's
   - Simple image editor
+  - Graphics generator
 
 
 NEXT REVISION/VERSION
