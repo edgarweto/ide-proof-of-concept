@@ -5,6 +5,9 @@ import IdeWorkAreaSplitter from 'appRoot/components/ideWorkAreaSplitter';
 import IdePaneContainer from 'appRoot/components/tabPane/idePaneContainer';
 import JsonExplorer from 'appRoot/components/jsonExplorer/jsonExplorer';
 import TextEditor from 'appRoot/components/textEditor/textEditor';
+import SettingsEditor from 'appRoot/components/settingsEditor/settingsEditor';
+
+import assert from 'appRoot/utils/assert';
 
 export default React.createClass({
   getInitialStatus: function () {
@@ -38,6 +41,48 @@ export default React.createClass({
     };
 
 
+    let layoutSettings = {
+      statusBarEnabled: true
+    };
+
+    let layoutSettingsMeta = {
+      statusBarEnabled: {
+        title: 'StatusBar',
+        type: 'bool',
+        enabled: false
+      }
+    };
+
+    function registerSetting(settingDescriptor) {
+      assert(() => {return settingDescriptor.name && settingDescriptor.meta ? true : false;});
+      assert(() => {return layoutSettings[settingDescriptor.name] === undefined;});
+      assert(() => {return layoutSettingsMeta[settingDescriptor.name] === undefined;});
+      
+      layoutSettings[settingDescriptor.name] = settingDescriptor.value;
+
+      layoutSettingsMeta[settingDescriptor.name] = settingDescriptor.meta;
+    }
+
+    registerSetting({
+      name: 'host',
+      value: 'http://localhost:8080/',
+      meta: {
+        title: 'Host',
+        type: 'string',
+        enabled: false
+      }
+    });
+    registerSetting({
+      name: 'colorScheme',
+      value: 'Black & White',
+      meta: {
+        title: 'Color scheme',
+        type: 'array',
+        enabled: true,
+        values: ['Black & White', 'Greens', 'Browns']
+      }
+    });
+
     return (
       <main className="ide-workspace">
         <IdeWorkAreaContainer orientation="horizontal">
@@ -56,7 +101,9 @@ export default React.createClass({
                 </IdePaneContainer>
               </IdeWorkArea>
               <IdeWorkAreaSplitter name="divider-2" pos={{}} />
-              <IdeWorkArea name="bottom-area" pos={{}} />
+              <IdeWorkArea name="bottom-area" pos={{}}>
+                <SettingsEditor name="" title="Layout" settings={layoutSettings} settingsMeta={layoutSettingsMeta} />
+              </IdeWorkArea>
             </IdeWorkAreaContainer>
           </IdeWorkArea>
         </IdeWorkAreaContainer>

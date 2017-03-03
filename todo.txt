@@ -7,6 +7,7 @@
       without requiring these views to implement a special API.
   + Special views
     - json explorer
+    - settings view
     - text editor
     - code editor
     - command interpreter (linked to command lib)
